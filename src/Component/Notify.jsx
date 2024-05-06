@@ -2,8 +2,8 @@ import React from "react";
 
 export const Notify = () => {
   return (
-    <div className="flex gap-12 py-32 w-full h-auto px-12">
-      <div className="pr-10">
+    <div className="flex flex-col md:flex gap-10 md:gap-12 py-32 w-full h-auto px-2 md:px-12">
+      <div className="md:pr-10">
         <h1 className="text-[#FBDDBB] text-[28px] font-[700]">
           Get notified when we update!
         </h1>
@@ -14,7 +14,7 @@ export const Notify = () => {
       </div>
 
       <div className="flex items-center justify-center text-center gap-2">
-        <form action="" className="bg-white h-10 px-6 flex items-center text-center">
+        <form action="" className="bg-white h-10 px-3 md:px-6 flex items-center text-center">
           <input
             className="text-[#B3B3B3] text-center outline-none"
             type="Email"
@@ -22,7 +22,7 @@ export const Notify = () => {
             name="email"
           />
         </form>
-        <button className="bg-[#FBDDBB] text-[#00302E] py-1 px-5 rounded-sm h-10">
+        <button className="bg-[#FBDDBB] text-[#00302E]  md:py-1 px-1 md:px-5 rounded-sm h-10">
           Get notified
         </button>
       </div>

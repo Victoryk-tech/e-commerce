@@ -3,23 +3,29 @@ import SignUpLogo from "../../public/assets/SignUpLogo.png";
 
 export const SignUp = () => {
   return (
-    <div className="w-full h-auto flex items-start justify-between pr-24  bg-white">
-      <div className="w-[50%] h-full">
+    <div className="w-full h-full block items-center md:flex lg:items-start justify-center lg:justify-between px-4 lg:pr-24  bg-white md:pt-[4rem] lg:pt-0 ">
+      <div className="hidden lg:block w-[50%] h-full">
         <img src={SignUpLogo} alt="siginup" />
       </div>
-      <div className="flex flex-col items-center justify-center md:pt-32 gap-8">
+
+      <div className="flex flex-col items-center justify-center  pt-[4rem] md:pt-32 gap-8">
         <h1 className="text-[#00302E] text-[27px] font-[700]">
           Welcome to Lilies!
         </h1>
 
-        <form action="" className="space-y-8 w-full">
-          <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-[10rem] rounded-[5px] text-[#00302E87]">
+        <form
+          action=""
+          className="space-y-8 w-full flex flex-col justify-center items-start
+        "
+        >
+          <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-24 rounded-[5px] text-[#00302E87]">
             <input
               type="text"
-              placeholder="Your First Name"
+              placeholder="Your Name"
               className="border-none outline-none"
             />
           </div>
+
           <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-24 rounded-[5px] text-[#00302E87]">
             <input
               type="Email"
@@ -33,18 +39,19 @@ export const SignUp = () => {
               placeholder="Your Password"
               className="border-none outline-none"
             />
-            <p className="text-bold font-[600] text-[16px] pl-[4rempx]">Show</p>
+            <p className="text-bold font-[600] text-[16px] pl-[3rem]">Show</p>
           </div>
 
-          <button className="text-[#FBDDBB] bg-[#00302E] py-4  px-[11rem] rounded-[5px] font-[500] text-[18px]">
+          <button className="text-[#FBDDBB] bg-[#00302E] py-4 px-[8rem] md:px-[9rem] rounded-[5px] font-[500] text-[18px]">
             SIGN UP
           </button>
-          
         </form>
-        <a href="#" className="text-[#00302EE8]">
-            Already have an account?{" "}
-            <strong className="text-[#00302E] text-[16px] font-bold">LOGIN</strong>
+        <p className="text-[#00302E] text-[20px]">
+          Already have an account?
+          <a href="#" className="font-[700]">
+            LOGIN
           </a>
+        </p>
       </div>
     </div>
   );

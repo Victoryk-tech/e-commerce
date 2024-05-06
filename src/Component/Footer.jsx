@@ -4,8 +4,8 @@ import { App } from "../Shared/AppStore";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#0B0D17] flex flex-col items-start text-[13px] font-[400] gap-4 py-16 w-full h-auto px-12 text-white pt-8">
-      <div className="w-full flex items-start justify-between pr-64 gap-4 text-start">
+    <div className="bg-[#0B0D17] flex flex-col items-start text-[12px] md:text-[13px] font-[400] gap-4 py-16 w-full h-auto px-4 md:px-12 text-white pt-8">
+      <div className="w-full flex items-start md:justify-between md:pr-64 gap-4 text-start">
         <div className="flex flex-col gap-4">
           <a href="#" className="text-[16px] font-[500] text-[#F4F5F7]">
             {" "}

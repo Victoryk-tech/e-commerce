@@ -6,9 +6,9 @@ import { Bon } from "../Shared/Bon";
 export const Hero = () => {
   return (
     <section>
-      <div className="flex justify-between items-center mx-auto w-full h-[90vh] px-12 space-x-8">
-        <div className="w-[50%] h-auto flex flex-col items-start justify-center pb-28  pr-10 gap-4">
-          <h1 className="text-[50px] font-[500] leading-12">
+      <div className="md:flex md:justify-between md:items-center mx-auto w-full h-[90vh] px-6 md:px-12 md:space-x-8 py-[6rem] md:py-0">
+        <div className="w-full md:w-[50%] h-auto flex flex-col items-start md:justify-center pb-6 md:pb-28  md:pr-10 gap-4">
+          <h1 className="text-[40px] md:text-[50px] font-[500] leading-10 md:leading-12">
             Order <strong className="text-[#E2B887]">food</strong> anytime,
             anywhere
           </h1>
@@ -23,7 +23,7 @@ export const Hero = () => {
         </div>
 
         {/* right side */}
-        <div className="w-[50%] h-full flex items-center justify-center pl-10">
+        <div className="w-full md:w-[50%] h-full flex items-center justify-center">
           <Bon />
         </div>
       </div>
