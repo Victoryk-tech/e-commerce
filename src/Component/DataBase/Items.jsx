@@ -1,12 +1,10 @@
 import burger from "../../images/burger.png";
 import pasta from "../../../public/assets/Pastaa.png";
 import foodie from "../../images/burg.png";
-import Profile from "../../../public/assets/Profile.png";
+//import Profile from "../../../public/assets/Profile.png";
 
 const items = [
-  {
-    profile: Profile,
-  },
+ 
   {
     image: pasta,
     name: "Stir Fry Pasta",

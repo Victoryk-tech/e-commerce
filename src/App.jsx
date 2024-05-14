@@ -11,6 +11,7 @@ import { Home } from "./Pages/Dashboard/Home.jsx";
 import { DashboardLayout } from "./Pages/Dashboard/DashboardLayout.jsx";
 import { ConditionalRoute } from "./Component/ConditionalRoute.jsx";
 
+
 export default function App() {
   return (
     <>
@@ -26,7 +27,7 @@ export default function App() {
           <Route path="login" element={<LogIn />} />
           <Route path="dashboard" element={<DashboardLayout />}>
             <Route index element={<Home />} />
-          </Route>
+          </Route>       
         </Routes>
         <ConditionalRoute>
           <Footer />
