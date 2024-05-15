@@ -2,7 +2,7 @@ import React, { useState } from "react";
 //import Modal from "./Modal";
 
 const Pasteries = ({ item }) => {
-  const { name, description, amount } = item;
+  const { name, description, amount, timing, packs } = item;
 
   const [modal, setModal] = useState(false);
   const toggleModal = () => {
@@ -22,7 +22,7 @@ const Pasteries = ({ item }) => {
         <p className="text-center text-[15px]">{description}</p>
         <div className="flex items-start justify-between gap-16 text-[17px] mt-4">
           <p className="font-bold ">{amount}</p>
-          <a href="#" className="text-[#06E775] font-[500]">
+          <a href="#" className="text-[#06E775] font-[500]" onClick={toggleModal}>
             Add to cart
           </a>
         </div>
@@ -45,8 +45,8 @@ const Pasteries = ({ item }) => {
               </p>
               <div className="flex items-center justify-between gap-8 font-[700]">
                 <p>{amount}</p>
-                <p>10 - 12 mins</p>
-                <p>10 Pcs Available</p>
+                <p>{timing}</p>
+                <p>{packs}</p>
               </div>
               <div className="flex justify-center items-center gap-16 font-[500]">
                 <div className="flex items-center gap-2">
