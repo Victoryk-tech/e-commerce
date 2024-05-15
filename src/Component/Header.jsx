@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Logo } from "../Shared/Logo";
 import { CgMenuRight } from "react-icons/cg";
 import { IoMdClose } from "react-icons/io";
-import {Link} from "react-router-dom"
+
 
 export const Header = () => {
   const [sideBar, setSideBar] = useState(false);
@@ -35,12 +35,12 @@ export const Header = () => {
           <a href="#" className="text-white text-[18px] font-[500]">
             Login
           </a>
-          <link
+          <a
             href="#"
             className="text-[#00302E] text-[16px] font-[600] bg-[#E2B887] rounded-[7px] p-2"
           >
             Sigin Up
-          </link>
+          </a>
         </nav>
         <div className="block md:hidden transition-all relative">
           <p onClick={handleSideBar}>

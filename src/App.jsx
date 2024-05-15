@@ -10,12 +10,12 @@ import { LogIn } from "./Pages/LogIn.jsx";
 import { Home } from "./Pages/Dashboard/Home.jsx";
 import { DashboardLayout } from "./Pages/Dashboard/DashboardLayout.jsx";
 import { ConditionalRoute } from "./Component/ConditionalRoute.jsx";
-import UserContextProvider from "./Context/UserContextProvider.jsx";
+
 
 
 export default function App() {
   return (
-    <UserContextProvider>
+    <>
       <BrowserRouter>
         <ConditionalRoute>
           <Header />
@@ -34,6 +34,6 @@ export default function App() {
           <Footer />
         </ConditionalRoute>
       </BrowserRouter>
-    </UserContextProvider>
+    </>
   );
 }

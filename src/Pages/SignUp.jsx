@@ -1,20 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import SignUpLogo from "../../public/assets/SignUpLogo.png";
-import {Link} from "react-router-dom"
-import UserContext from "../Context/UserContext";
+
+import { useNavigate } from "react-router-dom";
+
 
 export const SignUp = () => {
-  const [userName, setUserName] =useState('')
-  const [userPassword, setUserPassword] =useState('')
-  const [userEmail, setUserEmail] =useState('')
-
-   const {setUser} = useContext(UserContext)
+ 
+  const navigate = useNavigate()
+  
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    setUser({userName, userPassword, userEmail})
-
+   
+    navigate("/")
   }
+
   return (
     <div className="w-full h-full block items-center md:flex lg:items-start justify-center lg:justify-between px-4 lg:pr-24  bg-white md:pt-[4rem] lg:pt-0 ">
       <div className="hidden lg:block w-[50%] h-full">
@@ -26,17 +26,16 @@ export const SignUp = () => {
           Welcome to Lilies!
         </h1>
 
-        <form
-          action=""
+        <form  onSubmit={handleSubmit} 
+          action="form"
           className="space-y-8 w-full flex flex-col justify-center items-start
         "
         >
           <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-24 rounded-[5px] text-[#00302E87]">
             <input
               type="text"
-              value={userName}
+             
               placeholder="Your Name"
-              onChange={(e)=> setUserName(e.target.value)}
               className="border-none outline-none"
             />
           </div>
@@ -44,26 +43,25 @@ export const SignUp = () => {
           <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-24 rounded-[5px] text-[#00302E87]">
             <input
               type="Email"
-              value={userEmail}
+             
               placeholder="gregwill@gmail.com"
-              onChange={(e)=> setUserEmail(e.target.value)}
+            
               className="border-none outline-none"
             />
           </div>
           <div className="flex justify-between text-center border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-4 rounded-[5px] text-[#00302E87]">
             <input
               type="password"
-              value={userPassword}
-              onChange={(e)=> setUserPassword(e.target.value)}
+              
               placeholder="Your Password"
               className="border-none outline-none"
             />
             <p className="text-bold font-[600] text-[16px] pl-[3rem]">Show</p>
           </div>
 
-          <Link to={dashboard} onClick={handleSubmit} className="text-[#FBDDBB] bg-[#00302E] py-4 px-[8rem] md:px-[9rem] rounded-[5px] font-[500] text-[18px]">
+          <a className="text-[#FBDDBB] bg-[#00302E] py-4 px-[8rem] md:px-[9rem] rounded-[5px] font-[500] text-[18px]">
             SIGN UP
-          </Link>
+          </a>
         </form>
         <p className="text-[#00302E] text-[20px]">
           Already have an account?
