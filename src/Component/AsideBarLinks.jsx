@@ -50,10 +50,11 @@ export const AsideBarLinks = () => {
         </a>
 
         {eck && (
-          <div
-            onClick={toggleEck}
-            className="modal fixed w-full h-full bg-[#C4C4C46B]  right-0 top-0 flex flex-col justify-center md:justify-end items-center md:items-end"
-          >
+          <div className="modal fixed w-full h-full bg-[#C4C4C46B]  right-0 top-0 flex  justify-center md:justify-end items-center md:items-end">
+            <div
+              className="flex flex-col justify-start md:justify-center items-center gap-4 p-4 w-[58%] md:w-[35%] h-full bg-transparent text-black"
+              onClick={toggleEck}
+            ></div>
             {/* modal for items */}
             <div className="flex flex-col justify-start md:justify-center items-center gap-4 p-2 w-[42%] h-full bg-white text-black">
               <div className=" flex flex-col justify-start  items-start w-full h-full gap-4 text-black">
@@ -106,16 +107,15 @@ export const AsideBarLinks = () => {
         </a>
 
         {mode && (
-        <div
-           
-            className="modal fixed w-full h-full bg-[#C4C4C46B]  right-0 top-0 flex  justify-start md:justify-start items-start md:items-start"
-          >
+          <div className="modal fixed w-full h-full bg-[#C4C4C46B]  right-0 top-0 flex  justify-start md:justify-start items-start md:items-start">
             {/* modal for items */}
-           <div className="flex flex-col justify-start md:justify-start items-start gap-4 p-2 left-0 w-[55%] h-full bg-transparent text-black"  onClick={toggleMode}>
-          </div>
+            <div
+              className="flex flex-col justify-start md:justify-start items-start gap-4 p-2 left-0 w-[55%] h-full bg-transparent text-black"
+              onClick={toggleMode}
+            ></div>
             <div className="flex flex-col justify-start md:justify-start items-center gap-4 p-2 w-[45%] h-full bg-white text-black">
               <div className=" flex flex-col justify-start  items-start w-full h-full gap-4 text-black">
-                <p >Cart</p>
+                <p>Cart</p>
 
                 <table className="w-[500px] text-center">
                   <tr className="text-sm">
@@ -144,74 +144,74 @@ export const AsideBarLinks = () => {
                     </td>
                   </tr>
                 </table>
-                <a href="#" className="text-[#FBDDBB] bg-[#00302E] py-3 px-[6rem] md:px-[9rem] rounded-[5px] font-[500] text-[1[4px]" onClick={()=>{setMode(!mode);setCheck(!check)}}> 
+                <a
+                  href="#"
+                  className="text-[#FBDDBB] bg-[#00302E] py-3 px-[6rem] md:px-[9rem] rounded-[5px] font-[500] text-[1[4px]"
+                  onClick={() => {
+                    setMode(!mode);
+                    setCheck(!check);
+                  }}
+                >
                   CHECK OUT
                 </a>
               </div>
-
-             
             </div>
-
-            
-        </div>
-        )}
-         {/* {checkout} */}
-         {check &&(
-          
-                <div className=" modal absolute w-full h-full bg-[#C4C4C46B]  right-0 top-0 flex  justify-start md:justify-start items-start md:items-start">
-                  <div className="flex flex-col justify-start md:justify-start items-start gap-4 p-2 left-0 w-[65%] h-full bg-transparent text-black"  onClick={toggleCheck}>
           </div>
-                    <div className="flex flex-col justify-start md:justify-center items-start gap-4 px-12  right-0 w-[35%] h-full bg-white text-black">
-                  <p>checkout</p>
+        )}
+        {/* {checkout} */}
+        {check && (
+          <div className=" modal absolute w-full h-full bg-[#C4C4C46B]  right-0 top-0 flex  justify-start md:justify-start items-start md:items-start">
+            <div
+              className="flex flex-col justify-start md:justify-start items-start gap-4 p-2 left-0 w-[65%] h-full bg-transparent text-black"
+              onClick={toggleCheck}
+            ></div>
+            <div className="flex flex-col justify-start md:justify-center items-start gap-4 px-12  right-0 w-[35%] h-full bg-white text-black">
+              <p>checkout</p>
 
-                  <form
-    action="form"
-    className="space-y-8 w-full flex flex-col justify-center items-start
+              <form
+                action="form"
+                className="space-y-8 w-full flex flex-col justify-center items-start
   "
-  >
-    <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
-      <input
-        type="number"
-        placeholder="Card Number"
-        className="border-none outline-none"
-      />
-    </div>
+              >
+                <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
+                  <input
+                    type="number"
+                    placeholder="Card Number"
+                    className="border-none outline-none"
+                  />
+                </div>
 
-    <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
-      <input
-        type="number"
-        placeholder="Exp Date"
-        className="border-none outline-none"
-      />
-    </div>
+                <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
+                  <input
+                    type="number"
+                    placeholder="Exp Date"
+                    className="border-none outline-none"
+                  />
+                </div>
 
-    <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
-      <input
-        type="number"
-        placeholder="CVV/CVV2"
-        className="border-none outline-none"
-      />
-    </div>
+                <div className="border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
+                  <input
+                    type="number"
+                    placeholder="CVV/CVV2"
+                    className="border-none outline-none"
+                  />
+                </div>
 
-    <div className="flex justify-between text-center border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
-      <input
-        type="number"
-        placeholder="Card Pin"
-        className="border-none outline-none"
-      />
-      
-    </div>
+                <div className="flex justify-between text-center border-[1px] border-[#FBDDBB82] hover:border-[#00302E] py-4 pl-4 pr-36 rounded-[5px] text-[#00302E87]">
+                  <input
+                    type="number"
+                    placeholder="Card Pin"
+                    className="border-none outline-none"
+                  />
+                </div>
 
-    <button className="text-[#FBDDBB] bg-[#00302E] py-2 px-[2rem] md:px-[7.8rem] text-nowrap rounded-[5px] font-[500] text-[18px]">
-      Make payment
-    </button>
-  </form>
+                <button className="text-[#FBDDBB] bg-[#00302E] py-2 px-[2rem] md:px-[7.8rem] text-nowrap rounded-[5px] font-[500] text-[18px]">
+                  Make payment
+                </button>
+              </form>
             </div>
-            </div>
-                 
-                      
-                    
-                  )}
+          </div>
+        )}
       </div>
 
       <NavLink
