@@ -1,11 +1,14 @@
 import React from "react";
 import { Google } from "../Shared/Google";
 import { App } from "../Shared/AppStore";
+import { FaInstagram } from "react-icons/fa";
+import { SlSocialTwitter } from "react-icons/sl";
+import { FaYoutubeSquare } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#0B0D17] flex flex-col items-start text-[12px] md:text-[13px] font-[400] gap-4 py-16 w-full h-auto px-4 md:px-12 text-white pt-8">
-      <div className="w-full flex items-start md:justify-between md:pr-64 gap-4 text-start">
+    <div className="bg-[#0B0D17] flex flex-col items-start text-[12px] md:text-[13px] font-[400] gap-4 pt-16 pb-5 w-full h-auto px-4 md:px-12 text-white ">
+      <div className="w-full flex items-start md:justify-between md:pr-64 pb-8 gap-4 text-start">
         <div className="flex flex-col gap-4">
           <a href="#" className="text-[16px] font-[500] text-[#F4F5F7]">
             {" "}
@@ -40,10 +43,16 @@ export const Footer = () => {
           <App />
         </div>
       </div>
+      <div className="w-full border-[0.2px] border-white"></div>
 
-      <div>
+      <div className="pt-10 pl-3 flex items-center justify-between w-[85%]">
         <div>
           <p>© 2021 LILIES, All rights reserved</p>
+        </div>
+        <div className="flex items-center justify-center space-x-4 text-lg">
+          <FaInstagram />
+          <SlSocialTwitter />
+          <FaYoutubeSquare />
         </div>
       </div>
     </div>
