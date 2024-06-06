@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { IoCartOutline } from "react-icons/io5";
 import { MdBorderColor } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
+import { CartContext } from "./features/ContextProvider";
+import { CartProduct } from "./CartProduct";
 
 export const AsideBarLinks = () => {
   const [mode, setMode] = useState(false);
+  const { cartState } = useContext(CartContext);
   const toggleMode = () => {
     setMode(!mode);
   };
@@ -103,7 +106,7 @@ export const AsideBarLinks = () => {
           href="#"
           className="bg-[#06E775] px-[5px] rounded-[5px]  ml-7 font-bold"
         >
-          6
+          {cartState.totalQuantity}
         </a>
 
         {mode && (
@@ -117,43 +120,37 @@ export const AsideBarLinks = () => {
               <div className=" flex flex-col justify-start  items-start w-full h-full gap-4 text-black">
                 <p>Cart</p>
 
-                <table className="w-[500px] text-center">
-                  <tr className="text-sm">
-                    <th className="w-[200px] text-start">item</th>
-                    <th className="w-[100px]">Qty</th>
-                    <th className="w-[100px]">unit price</th>
-                    <th className="w-[100px]">sub total</th>
-                  </tr>
+                <div className="flex flex-col items-center gap-4">
+                  <nav className="flex items-start md:items-start text-center justify-start w-full md:space-x-3">
+                    <h1 className="w-[200px]">Item</h1>
+                    <h1 className="w-[100px]">Qty</h1>
+                    <h1 className="w-[100px]">Unit price</h1>
+                    <h1 className="w-[100px]">Subtotal</h1>
+                  </nav>
 
-                  <tr>
-                    <td className="flex">
-                      <img src="" alt="" className="w-[20%] h-[28%]" />
+                  {cartState.cart.map((item, index) => {
+                    return (
                       <div>
-                        <p>Stir fry</p>
-                        <p className="text-[#C92C33]">remove</p>
+                        <CartProduct key={index} cartItems={item} />
                       </div>
-                    </td>
-                    <td>
-                      <p>3</p>
-                    </td>
-                    <td>
-                      <p>1000</p>
-                    </td>
-                    <td>
-                      <p>30000</p>
-                    </td>
-                  </tr>
-                </table>
-                <a
-                  href="#"
-                  className="text-[#FBDDBB] bg-[#00302E] py-3 px-[6rem] md:px-[9rem] rounded-[5px] font-[500] text-[1[4px]"
-                  onClick={() => {
-                    setMode(!mode);
-                    setCheck(!check);
-                  }}
-                >
-                  CHECK OUT
-                </a>
+                    );
+                  })}
+                  <div>
+                    <p>Total items:{cartState.totalQuantity}</p>
+                    <p>Total Price:{cartState.totalPrice.toLocaleString()}</p>
+                  </div>
+
+                  <a
+                    href="#"
+                    className="text-[#FBDDBB] fixed bottom-10 ml-4 bg-[#00302E] py-3 px-[6rem] md:px-[12rem] rounded-[5px] font-[500] text-[1[4px]"
+                    onClick={() => {
+                      setMode(!mode);
+                      setCheck(!check);
+                    }}
+                  >
+                    CHECK OUT
+                  </a>
+                </div>
               </div>
             </div>
           </div>

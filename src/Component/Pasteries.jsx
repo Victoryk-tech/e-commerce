@@ -1,25 +1,45 @@
-import React, { useState } from "react";
-//import Modal from "./Modal";
+import React, { useContext, useState } from "react";
+import { CartContext } from "./features/ContextProvider";
 
-const Pasteries = ({ item }) => {
-  const { name, description, amount, timing, packs } = item;
+const Pasteries = ({ CartItem }) => {
+  const { name, description, amount, timing, packs, image } = CartItem;
   const [quantity, setQuantity] = useState(0);
   const [modal, setModal] = useState(false);
+
   const toggleModal = () => {
     setModal(!modal);
   };
-  const increment = () => {
-    setQuantity((prevCount) => prevCount + 1);
-  };
-  const decrement = () => {
-    setQuantity((prevCount) => prevCount - 1);
-  };
 
+  const { cartState, dispatch } = useContext(CartContext);
+
+  const IncreaseCart = (item) => {
+    dispatch({
+      type: "Increase_Cart",
+      payload: item,
+    });
+  };
+  const DecreaseCart = (item) => {
+    dispatch({
+      type: "Decrease_Cart",
+      payload: item,
+    });
+  };
+  // const increment = () => {
+  //   setQuantity((prevCount) => prevCount + 1);
+  // };
+  // const decrement = () => {
+  //   setQuantity((prevCount) => prevCount - 1);
+  // };
+
+  // Function to add item to cart
+  const addToCart = (item) => {
+    dispatch({ type: "Add_To_Cart", payload: item });
+  };
   return (
     <div className="w-full bg-white flex flex-col items-center justify-center">
       <div className=" text-center flex flex-col items-center justify-center px-8 md:px-9">
         <img
-          src={item.image}
+          src={image}
           alt=""
           onClick={toggleModal}
           className="w-[40%] h-[28%]"
@@ -31,7 +51,8 @@ const Pasteries = ({ item }) => {
           <a
             href="#"
             className="text-[#06E775] font-[500]"
-            onClick={toggleModal}
+            onClick={() => addToCart(CartItem)}
+            // onClick={toggleModal}
           >
             Add to cart
           </a>
@@ -45,7 +66,7 @@ const Pasteries = ({ item }) => {
             {/* modal for items */}
             <div className="flex flex-col justify-start md:justify-center items-center gap-4 p-4 w-[35%] h-full bg-white text-black">
               <div className=" flex flex-col justify-start md:justify-center items-center w-full h-full gap-4 text-black">
-                <img src={item.image} alt="" className="w-[40%] h-[28%]" />
+                <img src={image} alt="" className="w-[40%] h-[28%]" />
                 <h1>Blueberry Toasts and smoothie</h1>
                 <p className="text-center text-sm">
                   Just have a single bite of this Black Forest pastry and it
@@ -64,14 +85,14 @@ const Pasteries = ({ item }) => {
                   <div className="flex items-center gap-2">
                     <p
                       className="bg-[#F3C294] py-1 px-3 font-[700] cursor-pointer"
-                      onClick={decrement}
+                      onClick={() => DecreaseCart(CartItem)}
                     >
                       -
                     </p>
                     <p className="font-[700]">{quantity}</p>
                     <p
                       className="bg-[#F3C294] py-1 px-3 font-[600] cursor-pointer"
-                      onClick={increment}
+                      onClick={() => IncreaseCart(CartItem)}
                     >
                       +
                     </p>
@@ -80,6 +101,7 @@ const Pasteries = ({ item }) => {
                   <a
                     href="#"
                     className="bg-[#00302E] text-white py-2 px-3 text-[12px]"
+                    onClick={() => addToCart(CartItem)}
                   >
                     Add to cart
                   </a>

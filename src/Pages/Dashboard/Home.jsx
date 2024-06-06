@@ -3,10 +3,7 @@ import Profile from "../../../public/assets/Profile.png";
 import items from "../../Component/DataBase/Items";
 import Pasteries from "../../../src/Component/Pasteries.jsx";
 
-
-
 export const Home = () => {
- 
   return (
     <div className="col-span-12 md:col-span-10 md:py-9 px-1 md:px-10">
       <div className="flex justify-between items-center pl-10 md:py-0 pb-6 md:pb-0">
@@ -23,13 +20,11 @@ export const Home = () => {
         {items.map((item, index) => {
           return (
             <div className="">
-              <Pasteries key={index} item={item} /> ;
+              <Pasteries key={index} CartItem={item} /> ;
             </div>
           );
         })}
       </div>
-
-      
     </div>
   );
 };

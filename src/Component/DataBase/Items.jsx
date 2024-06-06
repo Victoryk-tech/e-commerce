@@ -6,6 +6,7 @@ import foodie from "../../images/burg.png";
 const items = [
  
   {
+    id:1,
     image: pasta,
     name: "Stir Fry Pasta",
     description: "Stir fry pasta yada yada yada because of Sesan",
@@ -14,6 +15,7 @@ const items = [
     packs:"11 Pcs Available",
   },
   {
+    id:2,
     image: burger,
     name: "Stir Fry Pasta",
     description: "Stir fry pasta yada yada yada because of Sesan",
@@ -23,6 +25,7 @@ const items = [
   },
 
   {
+    id:3,
     image: foodie,
     name: "Stir Fry Pasta",
     description: "Stir fry pasta yada yada yada because of Sesan",
@@ -31,6 +34,7 @@ const items = [
     packs:"16 Pcs Available",
   },
   {
+    id:4,
     image: foodie,
     name: "Stir Fry Pasta",
     description: "Stir fry pasta yada yada yada because of Sesan",
@@ -39,6 +43,7 @@ const items = [
     packs:"4 Pcs Available",
   },
   {
+    id:5,
     image: foodie,
     name: "Stir Fry Pasta",
     description: "Stir fry pasta yada yada yada because of Sesan",
@@ -47,6 +52,7 @@ const items = [
     packs:"10 Pcs Available",
   },
   {
+    id:6,
     image: foodie,
     name: "Stir Fry Pasta",
     description: "Stir fry pasta yada yada yada because of Sesan",
