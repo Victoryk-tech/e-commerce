@@ -60,13 +60,13 @@ export const Header = () => {
               >
                 <IoMdClose size={30} />
               </div>
-              <div className="ml-1 text-[24px] space-y-4 text-black">
+              <div className="ml-1 text-[24px] space-y-8 text-black">
                 <p>Home</p>
                 <Link to="login">
                   {" "}
                   <p>Login</p>
                 </Link>
-                <p>Login</p>
+
                 <Link to="signup">
                   <p className="text-[#00302E] font-semibold">Sign Up</p>
                 </Link>
