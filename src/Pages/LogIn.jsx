@@ -49,7 +49,9 @@ export const LogIn = () => {
           </Link>
         </form>
         <div className="flex items-center justify-center w-full md:items-start md:justify-start space-x-10 md:space-x-16 lg:space-x-[12rem] text-[#00302EE8]">
-          <a href="#">Create an account</a>
+          <Link to="/signup">
+            <a href="#">Create an account</a>
+          </Link>
           <a href="#">forgot password</a>
         </div>
       </div>

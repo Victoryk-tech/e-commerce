@@ -59,12 +59,14 @@ export const SignUp = () => {
             SIGN UP
           </a>
         </form>
-        <p className="text-[#00302E] text-[20px]">
-          Already have an account?
-          <a href="#" className="font-[700]">
-            LOGIN
-          </a>
-        </p>
+        <Link to="/login">
+          <p className="text-[#00302E] text-[20px]">
+            Already have an account?
+            <a href="#" className="font-[700]">
+              LOGIN
+            </a>
+          </p>
+        </Link>
       </div>
     </div>
   );

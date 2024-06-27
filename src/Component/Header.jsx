@@ -32,12 +32,12 @@ export const Header = () => {
           <a href="#" className="text-[#FBDDBB] text-[18px] font-[500]">
             Home
           </a>
-          <Link to="login">
+          <Link to="/login">
             <a href="#" className="text-white text-[18px] font-[500]">
               Login
             </a>
           </Link>
-          <Link to="signup">
+          <Link to="/signup">
             <a
               href="#"
               className="text-[#00302E] text-[16px] font-[600] bg-[#E2B887] rounded-[7px] p-2"
@@ -62,12 +62,12 @@ export const Header = () => {
               </div>
               <div className="ml-1 text-[24px] space-y-8 text-black">
                 <p>Home</p>
-                <Link to="login">
+                <Link to="/login">
                   {" "}
                   <p>Login</p>
                 </Link>
 
-                <Link to="signup">
+                <Link to="/signup">
                   <p className="text-[#00302E] font-semibold">Sign Up</p>
                 </Link>
               </div>
